@@ -1,6 +1,6 @@
 {{- range $cronjob := $.Values.cronjobs }}
 ---
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: {{ include "sdi-consistence-check.fullname" $ }}-{{ $cronjob.name }}-cronjob
