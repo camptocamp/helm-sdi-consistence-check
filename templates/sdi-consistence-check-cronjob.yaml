@@ -37,6 +37,10 @@ spec:
                 - name: {{ .name }}
                   mountPath: /mnt/{{ .name }}
                 {{- end }}
+              {{- with  $cronjob.command }}
+              command:
+                {{- toYaml . | nindent 16 }}
+              {{- end }}
               {{- with $cronjob.args }}
               args:
                 {{- toYaml . | nindent 16 }}
